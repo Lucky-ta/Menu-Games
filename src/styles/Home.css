@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+.home-body {
+  background: #536976;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #292e49, #536976);
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  font-family: "Ubuntu", Helvetica;
+  color: whitesmoke;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1.5em;
+  gap: 1em;
+}
+
+.home-titactoe-title {
+  padding-top: 0.6em;
+  padding-left: 2em;
+  font-weight: 700;
+  text-align: start;
+  font-family: Helvetica, sans-serif;
+}
+
+.home-games-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  height: 55vh;
+  justify-content: center;
+}
+
+.home-game-btn {
+  text-decoration: none;
+  border: 3px solid rgba(165, 180, 221, 0.699);
+  color: transparent;
+  padding: 40px 80px;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 0.5s;
+  position: relative;
+  border-radius: 2em;
+  background: rgb(34, 34, 34);
+  color: black;
+  max-width: 20em;
+  color: white;
+}
+
+.home-game-btn:hover {
+  border: 3px solid yellow;
+}
+
+.home-game-btn:before {
+  content: "JOGAR";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 28px;
+  top: 0;
+  left: 100%;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(0) rotatey(0);
+  border-radius: 2em;
+  opacity: 0;
+}
+
+.home-game-btn:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+
+.home-game-btn:after {
+  content: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  border-radius: 2em;
+  opacity: 1;
+}
+
+.home-game-btn:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}/*# sourceMappingURL=Home.css.map */
