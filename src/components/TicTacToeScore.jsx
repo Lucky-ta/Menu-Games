@@ -3,11 +3,12 @@ import React from 'react';
 
 function TicTacToeScore({ playerPoints, enemyPoints }) {
   return (
-    <div>
-      <h1>Placar</h1>
-      <span>{`Você: ${playerPoints}`}</span>
-      <span> || </span>
-      <span>{`Computador: ${enemyPoints}`}</span>
+    <div className="score-body">
+      <h1 className="score-title">Placar</h1>
+      <div className='score-poitns-container'>
+        <span className='score-points'>{`Você: ${playerPoints}`}</span>
+        <span className='score-points'>{`Computador: ${enemyPoints}`}</span>
+      </div>
     </div>
   );
 }

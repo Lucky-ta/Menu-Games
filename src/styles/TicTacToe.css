@@ -1,26 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 .tictactoe-table
 {
-  width: 500px;
-  height: 500px;
-	/* margin: 0 auto; */
-  background-color: #34495e;
+  width: 100%;
+  height: 45vh;
+  background-color: #797979;
   color: #fff;
-  border: 6px solid #2c3e50;
-  border-radius: 10px;
-	
+	margin-top: 0.4em;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
 }
 
+.tictactoe-table:hover {
+  cursor: pointer;
+}
+
 .table
 {
-  border: 6px solid #2c3e50;
-  border-radius: 2px;
+  border: 6px solid rgb(221, 216, 216);
   font-family: Helvetica;
   font-weight: bold;
   font-size: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tictactoe-title {
+  margin: auto;
+  padding-right: 1em;
+}
+
+.toctactoe-header {
+  display: flex;
+  background-color: rgba(248, 6, 6, 0.7);
+  width: 100%;
+  padding-top: 0.6em;
+  padding-bottom: 0.4em;
+}
+
+.tictactoe-arrow-btn {
+  background: none;
+  border: none;
+}
+
+.tictactoe-arrow-btn:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.tictactoe-body {
+  font-family: cursive;
+  font-weight: 100;
+  display: block;
+  color: whitesmoke;
+  height: 100vh;
+  background-color: rgba(204, 201, 201, 0.733);
+}
+
+.pickside-body {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  width: 100%;
+  padding-left: 1em;
+  /* font-size: 1em; */
+  gap: 1em;
+  padding-bottom: 1em;
+  align-items: center;
+  background-color: rgba(255, 145, 0, 0.719);
+
+}
+
+.pickside-btn {
+  border: none;
+  background-color: #8b8e91;
+  border-radius: 4px;
+  max-width: 10em;
+  width: 100%;
+  height: 2.8em;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.pickside-btn:hover {
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.score-body {
+  background-color: rgba(255, 145, 0, 0.719);
+  display: flex;
+  flex-direction: column;
+}
+
+.tictactoe-reset-btn {
+  font-family: cursive;
+  color: whitesmoke;
+  font-size: 1.2em;
+  font-weight: 800;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(248, 6, 6, 0.7);
+  padding-bottom: 1em;
+  padding-top: 1.2em;
+  border: none;
+}
+
+.tictactoe-reset-btn:hover {
+  cursor: pointer;
+}
+
+.score-title {
+  text-align: center;
+}
+
+.score-poitns-container {
+  padding-top: 0.8em;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.score-points {
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 1em; */
+  text-align: center;
+  padding: 1em;
+  border: 1px solid rgba(116, 115, 115, 0.726)
 }

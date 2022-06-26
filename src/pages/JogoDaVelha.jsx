@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from 'react';
 import '../styles/TicTacToe.css';
-import { useNavigate } from 'react-router-dom';
+import { HiArrowSmLeft } from 'react-icons/hi';
 import Player from '../service/TicTacToePlayer';
 import Enemy from '../service/TicTacToeEnemy';
 import TicTacToeScore from '../components/TicTacToeScore';
@@ -12,7 +12,6 @@ import verifyTableResult from '../service/ticTacToeVerifyResult';
 function JogoDaVelha() {
   const tableLength = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const navigate = useNavigate();
   const {
     playerPoints, SetPlayerPoints, enemyPoints, SetEnemyPoints,
   } = useContext(MyContext);
@@ -32,7 +31,7 @@ function JogoDaVelha() {
 
   const hanldeAttack = (id) => {
     if (side === null) return alert('Selecione um lado!');
-    if (document.getElementById(id).innerHTML !== '') return alert('Você não pode jogar aqui!');
+    if (document.getElementById(id).innerHTML !== '') { return alert('Você não pode jogar aqui!'); }
     setPlayedPositions([...playedPositions, Number(id)]);
     setRound(round + 1);
     return player.attack(id);
@@ -46,8 +45,11 @@ function JogoDaVelha() {
   }, [round]);
 
   return (
-    <div>
-      <h1>JogoDaVelha</h1>
+    <div className="tictactoe-body">
+      <div className='toctactoe-header'>
+        <button className='tictactoe-arrow-btn' type="button"><HiArrowSmLeft size={'2.8em'}/></button>
+        <h1 className="tictactoe-title">Jogo Da Velha</h1>
+      </div>
       {side === null ? (
         <TicTacToePickSide handleSide={handleSide} />
       ) : (
@@ -57,7 +59,7 @@ function JogoDaVelha() {
         />
       )}
       <div className="tictactoe-table">
-        { tableLength.map((n) => (
+        {tableLength.map((n) => (
           <div
             key={n}
             onClick={(e) => hanldeAttack(e.target.id)}
@@ -67,9 +69,11 @@ function JogoDaVelha() {
             id={JSON.stringify(n)}
             className="table"
           />
-        )) }
+        ))}
       </div>
-      <button type="button" onClick={() => navigate('/')}>Voltar</button>
+      <button className="tictactoe-reset-btn" type="button">
+        RESETAR
+      </button>
     </div>
   );
 }
