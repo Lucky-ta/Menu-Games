@@ -1,12 +1,19 @@
+import verifyTableResult from './ticTacToeVerifyResult';
+
 class Player {
-  constructor(side, round) {
+  constructor(side, round, points) {
     this.side = side;
     this.round = round;
+    this.points = points;
   }
 
   attack(id) {
-    console.log(`O JOGADOR DO LADO ${this.side} ATACOU!`);
     document.getElementById(id).innerHTML = this.side;
+    const result = verifyTableResult(this.side, 'player');
+    if (result === 'Você venceu!') {
+      window.setTimeout(() => alert('Você venceu!'), 500);
+      this.points.SetPlayerPoints(this.points.playerPoints + 1);
+    }
   }
 }
 

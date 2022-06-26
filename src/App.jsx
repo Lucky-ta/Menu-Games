@@ -1,10 +1,13 @@
 import React from 'react';
+import MyProvider from './MyContext/MyProvider';
 import Router from './routes/Router';
 
 function App() {
   return (
     <div className="App">
-      <Router />
+      <MyProvider>
+        <Router />
+      </MyProvider>
     </div>
   );
 }
