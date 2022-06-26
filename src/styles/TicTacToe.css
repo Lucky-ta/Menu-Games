@@ -3,12 +3,12 @@
 {
   width: 100%;
   height: 45vh;
+  /* max-height: 80em; */
   background-color: #797979;
   color: #fff;
 	margin-top: 0.4em;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-
 }
 
 .tictactoe-table:hover {
@@ -64,7 +64,6 @@
   font-weight: 100;
   width: 100%;
   padding-left: 1em;
-  /* font-size: 1em; */
   gap: 1em;
   padding-bottom: 1em;
   align-items: center;
@@ -127,8 +126,16 @@
 .score-points {
   width: 100%;
   height: 100%;
-  /* padding-bottom: 1em; */
   text-align: center;
   padding: 1em;
   border: 1px solid rgba(116, 115, 115, 0.726)
+}
+
+@media screen and (min-width: 1040px) {
+  .tictactoe-table {
+
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+  }
 }
