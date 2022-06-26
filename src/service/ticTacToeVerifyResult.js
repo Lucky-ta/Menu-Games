@@ -11,6 +11,18 @@ const verifyTableResult = (side, role) => {
   const eigthEl = document.getElementById('8').innerHTML;
   const nineEl = document.getElementById('9').innerHTML;
 
+  const elements = [
+    firstEl,
+    secEl,
+    third,
+    fourthEl,
+    fivEl,
+    sixEl,
+    sevEl,
+    eigthEl,
+    nineEl,
+  ];
+
   const firstCase = firstEl === side && secEl === side && third === side;
   const secondCase = fourthEl === side && fivEl === side && sixEl === side;
   const thirdCase = sevEl === side && eigthEl === side && nineEl === side;
@@ -42,7 +54,13 @@ const verifyTableResult = (side, role) => {
     window.setTimeout(() => clearTable(), 501);
     return 'Você venceu!';
   }
-  return null;
+
+  const casesValues = cases.filter((c) => c === true);
+  const elementsValues = elements.filter((e) => e === '');
+  if (casesValues.length === 0 && elementsValues.length === 0) {
+    window.setTimeout(() => clearTable(), 501);
+    return 'Empate';
+  } return null;
 };
 
 export default verifyTableResult;

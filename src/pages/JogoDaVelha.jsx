@@ -50,7 +50,10 @@ function JogoDaVelha() {
 
   useEffect(() => {
     const result = verifyTableResult(side, 'player');
-    if (result !== 'Você venceu!') {
+    if (result === 'Empate') {
+      window.setTimeout(() => alert('Empate'), 500);
+    }
+    if (result !== 'Você venceu!' && result !== 'Empate') {
       enemy.attack();
     }
   }, [round]);
