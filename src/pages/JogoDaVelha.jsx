@@ -46,8 +46,8 @@ function JogoDaVelha() {
 
   return (
     <div className="tictactoe-body">
-      <div className='toctactoe-header'>
-        <button className='tictactoe-arrow-btn' type="button"><HiArrowSmLeft size={'2.8em'}/></button>
+      <div className="toctactoe-header">
+        <button className="tictactoe-arrow-btn" type="button"><HiArrowSmLeft size="2.8em" /></button>
         <h1 className="tictactoe-title">Jogo Da Velha</h1>
       </div>
       {side === null ? (
