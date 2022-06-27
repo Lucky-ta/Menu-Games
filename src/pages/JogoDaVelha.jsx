@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useContext, useEffect, useState } from 'react';
 import '../styles/TicTacToe.css';
-import { HiArrowSmLeft } from 'react-icons/hi';
-import { useNavigate } from 'react-router-dom';
 import Player from '../service/TicTacToePlayer';
 import Enemy from '../service/TicTacToeEnemy';
 import TicTacToeScore from '../components/TicTacToeScore';
@@ -10,9 +8,9 @@ import MyContext from '../MyContext/MyContext';
 import TicTacToePickSide from '../components/TicTacToePickSide';
 import verifyTableResult from '../service/ticTacToeVerifyResult';
 import clearTable from '../service/TicTacToeClearTable';
+import Header from '../components/Header';
 
 function JogoDaVelha() {
-  const navigate = useNavigate();
   const tableLength = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   const {
@@ -60,16 +58,7 @@ function JogoDaVelha() {
 
   return (
     <div className="tictactoe-body">
-      <div className="toctactoe-header">
-        <button
-          onClick={() => navigate('/')}
-          className="tictactoe-arrow-btn"
-          type="button"
-        >
-          <HiArrowSmLeft size="2.8em" />
-        </button>
-        <h1 className="tictactoe-title">Jogo Da Velha</h1>
-      </div>
+      <Header title="Jogo da Velha" />
       {side === null ? (
         <TicTacToePickSide handleSide={handleSide} />
       ) : (
