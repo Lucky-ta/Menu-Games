@@ -1,23 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
+import Player from '../service/Jokenpo/Player';
 import '../styles/Jokenpo.css';
 
 function Jokenpo() {
+  const [choise, setChoise] = useState('PEPEL');
+  const player = new Player(choise);
+  
   return (
     <div className="jokenpo-body">
       <Header title="Jokenpo" />
       <div className="jokenpo-app-option">
         <p>App</p>
         <div className="jokenpo-pickachoice-btn-Appcontainer">
-          <button className="jokenpo-app-btn" type="button">ANY</button>
+          <button className="jokenpo-app-btn" type="button">
+            ANY
+          </button>
         </div>
       </div>
       <div className="jokenpo-pickachoice-container">
         <p>Escolha uma jogada</p>
         <div className="jokenpo-pickachoice-btn-container">
-          <button className="jokenpo-pickachoice-btn" type="button">Pedra</button>
-          <button className="jokenpo-pickachoice-btn" type="button">Papel</button>
-          <button className="jokenpo-pickachoice-btn" type="button">Tesoura</button>
+          <button className="jokenpo-pickachoice-btn" type="button">
+            Pedra
+          </button>
+          <button className="jokenpo-pickachoice-btn" type="button">
+            Papel
+          </button>
+          <button className="jokenpo-pickachoice-btn" type="button">
+            Tesoura
+          </button>
         </div>
       </div>
       <div className="jokenpo-score-container">
@@ -35,7 +47,9 @@ function Jokenpo() {
         </div>
       </div>
       <footer className="jokenpo-footer">
-        <button className="jokenpo-footer-btn" type="button">Jogar</button>
+        <button className="jokenpo-footer-btn" type="button">
+          RESETAR PLACAR
+        </button>
       </footer>
     </div>
   );
