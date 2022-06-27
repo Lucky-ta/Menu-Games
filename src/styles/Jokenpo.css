@@ -38,7 +38,7 @@
   gap: 2.6em;
 }
 
-.jokenpo-pickachoice-container, .jokenpo-app-option {
+.jokenpo-pickachoice-container, .jokenpo-app-option, .jokenpo-player-option {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -48,7 +48,7 @@
   gap: 1em;
 }
 
-.jokenpo-pickachoice-btn-container {
+.jokenpo-pickachoice-btn-container, .jokenpo-player-option {
   display: flex;
   justify-content: center;
   gap: 2em;
@@ -72,7 +72,7 @@
   top: 6em;
 }
 
-.jokenpo-app-btn {
+.jokenpo-app-btn, .jokenpo-option {
   width: 100%;
   height: 100%;
   max-width: 10em;
@@ -83,4 +83,24 @@
 .jokenpo-pickachoice-btn-Appcontainer {
   width: 100%;
   height: 100%;
+}
+
+.jokenpo-player-option {
+  height: 11em;
+  align-items: center;
+}
+
+.jokenpo-option {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  width: 100%;
+  max-width: 9em;
+  height: 100%;
+  border-radius: 10em;
+  justify-content: center;
+}
+
+.jokenpo-player-option {
+  gap: 1em;
 }/*# sourceMappingURL=Jokenpo.css.map */

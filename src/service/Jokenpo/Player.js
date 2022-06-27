@@ -5,7 +5,7 @@ class Player {
   }
 
   play() {
-    console.log(this.choice);
+    return this.choice;
   }
 }
 
