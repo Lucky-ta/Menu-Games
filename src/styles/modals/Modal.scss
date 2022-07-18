@@ -12,4 +12,18 @@
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
+    
+    animation-duration: 0.8s;
+    animation-name: slidein;
+    @keyframes slidein {
+    from {
+        height: 2px;
+        width: 2px;
+    }
+    to {
+        width: 80vw;
+        height: 60vh;
+    }
+  
+}
 }
