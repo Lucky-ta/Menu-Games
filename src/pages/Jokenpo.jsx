@@ -8,6 +8,7 @@ import MyContext from '../MyContext/MyContext';
 
 function Jokenpo() {
   const { gameResult, setGameResult } = useContext(MyContext);
+  const [modal, setModal] = useState(false);
   const ENEMY = new Enemy();
   const [round, setRound] = useState(0);
   const [enemyOption, SetEnemyOption] = useState('');
@@ -19,6 +20,7 @@ function Jokenpo() {
   const handleOption = (choice) => {
     setOption(choice);
     setRound(round + 1);
+    setModal(true);
   };
 
   const resetGame = () => {
@@ -38,15 +40,6 @@ function Jokenpo() {
     const result = jokenpoVerifyResult(enemyOption, option);
     setGameResult(result);
     console.log(result);
-    if (result === 'Empate.' && enemyOption !== '') {
-      window.setTimeout(() => alert(result), 200);
-    }
-    if (result === 'Você venceu!' && enemyOption !== '') {
-      setPoints(points + 1);
-    }
-    if (result === 'Você perdeu.' && enemyOption !== '') {
-      setEnemyPoints(enemyPoints + 1);
-    }
   }, [enemyOption]);
 
   return (
@@ -119,7 +112,7 @@ function Jokenpo() {
           RESETAR PLACAR
         </button>
       </footer>
-      <ResultModal result={gameResult} />
+      {modal && <ResultModal setModal={setModal} result={gameResult} />}
     </div>
   );
 }

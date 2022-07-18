@@ -47,7 +47,6 @@ const verifyTableResult = (side, role) => {
 
   if (cases.find((c) => c === true) && role === 'enemy') {
     window.setTimeout(() => clearTable(), 501);
-    window.setTimeout(() => alert('Você perdeu...'), 500);
     return 'Você perdeu...';
   }
   if (cases.find((c) => c === true) && role === 'player') {

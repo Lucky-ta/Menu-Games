@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/modals/Modal.css';
 
-function ResultModal({ result }) {
+function ResultModal({ result, setModal }) {
+  const navigate = useNavigate();
+
   let resultClassName = '';
   switch (result) {
     case 'Empate.':
@@ -18,17 +21,34 @@ function ResultModal({ result }) {
       break;
   }
 
+  const handleExitBtn = () => {
+    navigate('/');
+  };
+
+  const handleContinueGame = () => {
+    setModal(false);
+  };
+
   return (
     <div className="container">
       <p className={resultClassName}>{result}</p>
-      <p className="modalContinueBtn">Continuar</p>
-      <p className="modalExitBtn">Sair</p>
+      <button
+        type="button"
+        className="modalContinueBtn"
+        onClick={handleContinueGame}
+      >
+        Continuar
+      </button>
+      <button type="button" onClick={handleExitBtn} className="modalExitBtn">
+        Sair
+      </button>
     </div>
   );
 }
 
 ResultModal.propTypes = {
   result: PropTypes.string.isRequired,
+  setModal: PropTypes.func.isRequired,
 };
 
 export default ResultModal;
