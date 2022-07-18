@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Enemy from '../service/Jokenpo/Enemy';
+import ResultModal from './modals/resultModal';
 import jokenpoVerifyResult from '../service/Jokenpo/jokenpoVerifyResult';
 import '../styles/Jokenpo.css';
 
@@ -115,6 +116,7 @@ function Jokenpo() {
           RESETAR PLACAR
         </button>
       </footer>
+      <ResultModal />
     </div>
   );
 }
