@@ -6,12 +6,15 @@ import MyContext from './MyContext';
 function MyProvider({ children }) {
   const [playerPoints, SetPlayerPoints] = useState(0);
   const [enemyPoints, SetEnemyPoints] = useState(0);
+  const [gameResult, setGameResult] = useState('');
 
   const data = {
     playerPoints,
     enemyPoints,
     SetPlayerPoints,
     SetEnemyPoints,
+    gameResult,
+    setGameResult,
   };
 
   return <MyContext.Provider value={data}>{children}</MyContext.Provider>;

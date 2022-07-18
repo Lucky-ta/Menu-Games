@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Header from '../components/Header';
 import Enemy from '../service/Jokenpo/Enemy';
 import ResultModal from './modals/resultModal';
 import jokenpoVerifyResult from '../service/Jokenpo/jokenpoVerifyResult';
 import '../styles/Jokenpo.css';
+import MyContext from '../MyContext/MyContext';
 
 function Jokenpo() {
+  const { gameResult, setGameResult } = useContext(MyContext);
   const ENEMY = new Enemy();
   const [round, setRound] = useState(0);
   const [enemyOption, SetEnemyOption] = useState('');
@@ -34,6 +36,7 @@ function Jokenpo() {
 
   useEffect(() => {
     const result = jokenpoVerifyResult(enemyOption, option);
+    setGameResult(result);
     console.log(result);
     if (result === 'Empate.' && enemyOption !== '') {
       window.setTimeout(() => alert(result), 200);
@@ -116,7 +119,7 @@ function Jokenpo() {
           RESETAR PLACAR
         </button>
       </footer>
-      <ResultModal />
+      <ResultModal result={gameResult} />
     </div>
   );
 }
