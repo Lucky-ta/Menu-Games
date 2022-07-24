@@ -60,6 +60,7 @@ Certifique-se de que não há nenhuma mais nenhuma aplicação rodando na porta 
 O projeto foi desenvolvido com as seguintes ferramentas:
 
 * [ReactJs](https://reactjs.org/) - Biblioteca para criar interfaces
+* [Sass](https://sass-lang.com/) - Biblioteca para pré-processamento de CSS
 
 ## 📌 Versão
 
