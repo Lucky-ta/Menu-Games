@@ -9,7 +9,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Navigate to="/home" />} />
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/JogoDaVelha" element={<JogoDaVelha />} />
       </Routes>
