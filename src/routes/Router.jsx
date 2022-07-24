@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom';
 import Home from '../pages/Home';
 import JogoDaVelha from '../pages/JogoDaVelha';
-import Jokenpo from '../pages/Jokenpo';
 
 function Router() {
   return (
@@ -13,7 +12,6 @@ function Router() {
         <Route exact path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
         <Route path="/JogoDaVelha" element={<JogoDaVelha />} />
-        <Route path="/Jokenpo" element={<Jokenpo />} />
       </Routes>
     </BrowserRouter>
   );

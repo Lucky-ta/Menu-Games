@@ -26,16 +26,6 @@ function Home() {
             JOGO DA VELHA
           </button>
         </div>
-        <div className="home-jokenpo-body">
-          <button
-            className="home-game-btn"
-            onClick={(e) => handleGameOption(e.target.id)}
-            id="Jokenpo"
-            type="button"
-          >
-            PEDRA PAPEL OU TESOURA
-          </button>
-        </div>
       </div>
     </div>
   );
